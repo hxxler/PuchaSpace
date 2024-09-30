@@ -8,12 +8,15 @@
 </head>
 <body>
     <h1>Счёт: <span id="score">0</span></h1>
-    <img id="clickImage" src="click-image.jpg" alt="Click me!"> <!-- Изменили на JPG -->
+
+    <div id="clickArea">
+        <img id="clickImage" src="click-image.jpg" alt="Click me!"> <!-- Картинка для кликов -->
+    </div>
 
     <div id="boosters" style="display: none;">
         <h2>Boosters</h2>
         <p>Энергия: <span id="energy">100</span></p>
-        <p>Прибыль за клик: <span id="profitPerClick">2</span></p> <!-- Начальная прибыль за клик -->
+        <p>Прибыль за клик: <span id="profitPerClick">2</span></p>
         <button id="buyProfitBooster">Купить бустер прибыли (2 очка)</button>
 
         <hr> <!-- Разделитель -->
