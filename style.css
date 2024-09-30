@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden; /* Скрыть прокрутку */
+}
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Изображение растягивается на всю ширину */
+    height: 100%; /* Изображение растягивается на всю высоту */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    z-index: -1; /* За текстом */
+}
+h1 {
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Цвет текста */
+}
+#boosters {
+    display: none; /* Скрываем по умолчанию */
+    color: white; /* Цвет текста в разделе Boosters */
+}

@@ -4,38 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        img {
-            width: 200px; /* Измените размер по желанию */
-            cursor: pointer;
-        }
-        h1 {
-            font-size: 24px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем CSS -->
 </head>
 <body>
     <h1>Счёт: <span id="score">0</span></h1>
     <img id="clickImage" src="click-image.jpg" alt="Click me!">
 
-    <script>
-        let score = 0;
-        const scoreElement = document.getElementById('score');
-        const clickImage = document.getElementById('clickImage');
+    <div id="boosters">
+        <h2>Boosters</h2>
+        <p>Энергия: <span id="energy">100</span></p>
+        <p>Скорость восстановления: <span id="recoverySpeed">1</span> в секунду</p>
+        <p>Прибыль за клик: <span id="profitPerClick">1</span></p>
+        <button id="buyBooster">Купить Бустер</button>
+    </div>
 
-        clickImage.addEventListener('click', function() {
-            score++;
-            scoreElement.textContent = score;
-        });
-    </script>
+    <script src="script.js"></script> <!-- Подключаем JavaScript -->
 </body>
 </html>
