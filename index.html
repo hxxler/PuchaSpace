@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuchaSpace</title>
+    <title>Clicker Game</title>
     <link rel="stylesheet" href="style.css"> <!-- Подключаем CSS -->
 </head>
 <body>
     <h1>Счёт: <span id="score">0</span></h1>
     <img id="clickImage" src="click-image.jpg" alt="Click me!"> <!-- Изменили на JPG -->
 
-    <div id="boosters">
+    <div id="boosters" style="display: none;">
         <h2>Boosters</h2>
         <p>Энергия: <span id="energy">100</span></p>
-        <p>Скорость восстановления: <span id="recoverySpeed">1</span> в секунду</p>
         <p>Прибыль за клик: <span id="profitPerClick">2</span></p> <!-- Начальная прибыль за клик -->
-        <p>Цена бустера: <span id="boosterCost">2</span></p> <!-- Начальная цена бустера -->
-        <button id="buyBooster">Купить Бустер</button>
+        <button id="buyProfitBooster">Купить бустер прибыли (2 очка)</button>
+
+        <hr> <!-- Разделитель -->
+
+        <p>Увеличение энергии: <span id="energyIncrease">0</span></p>
+        <button id="buyEnergyBooster">Купить бустер энергии (2 очка)</button>
     </div>
+
+    <button id="toggleBoosters">Показать/Скрыть бустеры</button> <!-- Кнопка для переключения вкладки -->
 
     <script src="script.js"></script> <!-- Подключаем JavaScript -->
 </body>

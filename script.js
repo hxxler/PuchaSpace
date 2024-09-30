@@ -28,17 +28,29 @@ clickImage.addEventListener('click', function() {
     }
 });
 
-// Обработка покупки бустера
-document.getElementById('buyBooster').addEventListener('click', function() {
+// Обработка покупки бустера прибыли
+document.getElementById('buyProfitBooster').addEventListener('click', function() {
     if (score >= boosterCost) { // Проверяем, достаточно ли очков
         score -= boosterCost; // Уменьшаем счёт на стоимость бустера
         profitPerClick *= 2; // Увеличиваем прибыль за клик в 2 раза
-        energyConsumptionPerClick = 2; // Энергия по-прежнему 2, это можно изменить, если нужно
         boosterCost = Math.pow(boosterCost, 2); // Увеличиваем стоимость бустера (возводим в квадрат)
         
         // Обновляем элементы на странице
         document.getElementById('profitPerClick').textContent = profitPerClick;
-        document.getElementById('boosterCost').textContent = boosterCost;
+        scoreElement.textContent = score;
+    } else {
+        alert('Недостаточно очков для покупки бустера!');
+    }
+});
+
+// Обработка покупки бустера энергии
+document.getElementById('buyEnergyBooster').addEventListener('click', function() {
+    if (score >= boosterCost) { // Проверяем, достаточно ли очков
+        score -= boosterCost; // Уменьшаем счёт на стоимость бустера
+        energy += 20; // Увеличиваем энергию (например, на 20)
+        document.getElementById('energy').textContent = energy.toFixed(0);
+        boosterCost = Math.pow(boosterCost, 2); // Увеличиваем стоимость бустера (возводим в квадрат)
+        document.getElementById('energyIncrease').textContent = energy; // Обновляем отображение увеличенной энергии
         scoreElement.textContent = score;
     } else {
         alert('Недостаточно очков для покупки бустера!');
@@ -51,11 +63,8 @@ function toggleBoosters() {
     boosters.style.display = boosters.style.display === 'none' ? 'block' : 'none';
 }
 
-// Кнопка для переключения вкладки
-const toggleButton = document.createElement('button');
-toggleButton.textContent = 'Переключить Boosters';
-toggleButton.addEventListener('click', toggleBoosters);
-document.body.appendChild(toggleButton);
+// Обработка нажатия на кнопку переключения
+document.getElementById('toggleBoosters').addEventListener('click', toggleBoosters);
 
 // Сохранение и загрузка данных
 function saveData() {
@@ -73,7 +82,7 @@ function loadData() {
     scoreElement.textContent = score;
     document.getElementById('energy').textContent = energy;
     document.getElementById('profitPerClick').textContent = profitPerClick;
-    document.getElementById('boosterCost').textContent = boosterCost;
+    document.getElementById('energyIncrease').textContent = energy; // Отображение увеличенной энергии
 }
 
 // Загружаем данные при запуске
