@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Game</title>
     <style>
         body {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
-        .button {
-            padding: 10px 20px;
-            font-size: 20px;
+        img {
+            width: 200px; /* Измените размер по желанию */
             cursor: pointer;
         }
-        .score {
-            margin-top: 20px;
+        h1 {
             font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <h1>Clicker Game</h1>
-    <button class="button" onclick="addPoint()">Click me!</button>
-    <div class="score">Score: <span id="score">0</span></div>
+    <h1>Счёт: <span id="score">0</span></h1>
+    <img id="clickImage" src="click-image.jpg" alt="Click me!">
 
     <script>
         let score = 0;
-        function addPoint() {
-            score += 1;
-            document.getElementById('score').innerText = score;
-        }
+        const scoreElement = document.getElementById('score');
+        const clickImage = document.getElementById('clickImage');
+
+        clickImage.addEventListener('click', function() {
+            score++;
+            scoreElement.textContent = score;
+        });
     </script>
 </body>
 </html>
